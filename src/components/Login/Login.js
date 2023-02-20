@@ -1,11 +1,13 @@
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useState } from 'react'
 import { auth } from '../../firebase'; 
+import { Link, useNavigate } from 'react-router-dom';
 
 function Login() {
   const [ displayName, setDisplayName] = useState('');
   const [ email, setEmail ] = useState('');
   const [ password, setPassword ] = useState('');
+  const navigate = useNavigate();
 
   const handleSignIn = (e) => {
     e.preventDefault();
@@ -13,6 +15,7 @@ function Login() {
     .then((useCredential) => {
       console.log(useCredential);
     })
+    navigate('/home')
     .catch((error) => {
       console.log(error);
     });
@@ -20,16 +23,8 @@ function Login() {
 
   return (
 		<div className='login__main-container'>
-			<form onSubmit={handleSignIn}>
+			<form onSubmit={handleSignIn} className='login__form'>
         <h1>Login to your Account.</h1>
-				<label htmlFor='displayName'>First Name</label>
-				<input
-					type='text'
-					id='displayName'
-					name='displayName'
-					value={displayName}
-					onChange={(e) => setDisplayName(e.target.value)}
-				/>
 				<label htmlFor='email'>Email</label>
 				<input
 					type='email'
@@ -48,6 +43,10 @@ function Login() {
 				/>
 				<input type='submit' />
 			</form>
+      <h3>No Account? No Problem.</h3>
+      <Link to='/register'>
+        Register Here
+      </Link>
 		</div>
 	);
 }
