@@ -1,8 +1,13 @@
 body {
   margin: 0;
   font-family: 'Helvetica', sans-serif;
+  background-color: #EADED5;
 }
 
 * {
   box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
 }

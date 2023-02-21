@@ -31,32 +31,32 @@ function LandingPage() {
 		},
 	];
 
-    const settings = {
-				infinite: true,
-				dots: true,
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				lazyLoad: true,
-				autoplay: true,
-				autoplaySpeed: 5000,
+	const settings = {
+		infinite: true,
+		dots: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		lazyLoad: true,
+		autoplay: true,
+		autoplaySpeed: 5000,
 	};
 
 	return (
 		<div className='landing_page-container'>
-			<h1>insync.</h1>
-			<div>
-        <Slider {...settings}>
-            {carouselData.map((item) => {
-                return (
-                    <div key={item.id}>
-                      <p>{item.title}</p>
-                      <img src={item.img}  alt={item.alt} />
-                    </div>
-                )
-                })}
-        </Slider>
-            </div>
-			<Link to='/login'>Get Started</Link>
+			<h1 className='landing_page-header'>insync.</h1>
+				<Slider {...settings}>
+					{carouselData.map((item) => {
+						return (
+							<div key={item.id}>
+								<p className='carousel-text'>{item.title}</p>
+								<img src={item.img} alt={item.alt} className='carousel-img' />
+							</div>
+						);
+					})}
+				</Slider>
+			<Link to='/login' className='landing_page-link'>
+				Get Started
+			</Link>
 		</div>
 	);
 }
