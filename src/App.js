@@ -18,16 +18,20 @@ function App() {
 
 	return (
 		<div className='main__container'>
-			{pathname !== '/' && '/login' && '/register' && <Navigation></Navigation>}
+			{pathname !== '/login' &&
+				pathname !== '/register' &&
+				pathname !== '/' && <Navigation></Navigation>}
 			<Routes>
 				<Route index path='/' element={<LandingPage />} />
 				<Route path='/home' element={<Home />} />
 				<Route path='/login' element={<Login />} />
 				<Route path='/register' element={<Register />} />
-				<Route path='/meditation-detail' element={<MeditationDetail />} />
+				<Route path='/meditation-detail/:id' element={<MeditationDetail />} />
 				<Route path='/meditation-feed' element={<MeditationFeed />} />
 			</Routes>
-			{pathname !== '/' && '/login' && '/register' && <Footer />}
+			{pathname !== '/login' &&
+				pathname !== '/register' &&
+				pathname !== '/' && <Footer />}
 		</div>
 	);
 }

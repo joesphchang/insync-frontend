@@ -38,3 +38,105 @@
     border-radius: 25px 25px 0 0;
     margin-top: 50px;
 }
+
+/* Login */
+.login__main-container {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login_header {
+    font-size: 24px;
+    text-align: center;
+}
+
+.login_label {
+    font-size: 18px;
+}
+
+.login_input {
+    height: 25px;
+}
+
+.login_button {
+    margin: 5px auto;
+    background-color: #377077;
+    width: 50%;
+    height: 25px;
+    cursor: pointer;
+}
+
+.login_button{
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #1A1A1A;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #3B3B3B;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1px;
+    margin-top: 5px;
+    min-height: 25px;
+    min-width: 0;
+    outline: none;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 100%;
+    will-change: transform;
+}
+
+.login_button:disabled {
+    pointer-events: none;
+}
+
+.login_button:hover {
+    color: #fff;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+.login_button:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+.register_container {
+    text-align: center;
+}
+
+.login_register-text {
+    font-size: 14px;
+}
+
+.register_link {
+    color: #000;
+    cursor: pointer;
+}
+
+.register_link:hover {
+    color: #377077;
+}
+
+.login_image {
+    width: 50%;
+}
+
+
+/* Register */
