@@ -12,6 +12,7 @@ import MeditationDetail from './components/MeditationDetail/MeditationDetail';
 import MeditationFeed from './components/MeditationFeed/MeditationFeed';
 import Footer from './components/Footer/Footer';
 import LandingPage from './components/LandingPage/LandingPage';
+import About from './components/About/About';
 
 function App() {
 	const { pathname } = useLocation();
@@ -26,8 +27,9 @@ function App() {
 				<Route path='/home' element={<Home />} />
 				<Route path='/login' element={<Login />} />
 				<Route path='/register' element={<Register />} />
-				<Route path='/meditation-detail/:id' element={<MeditationDetail />} />
+				<Route path='/meditation-feed/:id' element={<MeditationDetail />} />
 				<Route path='/meditation-feed' element={<MeditationFeed />} />
+				<Route path='/about' element={<About />} />
 			</Routes>
 			{pathname !== '/login' &&
 				pathname !== '/register' &&

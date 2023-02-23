@@ -1,13 +1,16 @@
 /* Landing Page */
 .landing_page-container {
     width: 100%;
+    height: 90vh;
     display: flex;
     flex-direction: column;
 }
 
 .landing_page-header {
     font-style: oblique;
+    margin-top: 100px;
     margin-left: 25px;
+    margin-bottom: 25px;
 }
 
 .slick-list {
@@ -36,7 +39,7 @@
     height: 150px;
     background-color: #377077;
     border-radius: 25px 25px 0 0;
-    margin-top: 50px;
+    margin-top: 75px;
 }
 
 /* Login */
@@ -153,8 +156,8 @@
     background-color: #377077;
 }
 
-.navbar img {
-    width: 80px;
+.logo {
+    font-style: oblique;
 }
 
 .nav-menu {
@@ -165,8 +168,25 @@
     padding: 1rem;
 }
 
+a:hover {
+    color: #fff;
+}
+
+.nav-button:hover {
+    color: #fff;
+}
+
+.nav-button {
+    color: #000;
+}
+
 .hamburger {
     display: none;
+}
+
+.nav-button {
+    background-color: #377077;
+    border: none;
 }
 
 @media screen and (max-width: 940px) {
@@ -177,6 +197,7 @@
         flex-direction: column;
         justify-content: center;
         background-color: #377077;
+        opacity: 90%;
         width: 100%;
         height: 50%;
         text-align: center;
@@ -184,18 +205,19 @@
         border-radius: 0 0 50px 50px;
     }
 
+    .logo {
+        font-style: oblique;
+    }
     .nav-menu.active {
         left: 0;
     }
 
-    a:hover {
-        color: #fff;
-    }
-
     .nav-item {
-        margin: 1.5rem;
+        margin: 0.7rem;
         font-size: 1.8rem;
         justify-content: center;
+        opacity: 100%;
+        cursor: pointer;
     }
 
     .hamburger {

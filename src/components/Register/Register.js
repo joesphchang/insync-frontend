@@ -1,4 +1,8 @@
-import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import {
+	createUserWithEmailAndPassword,
+	onAuthStateChanged,
+	updateProfile,
+} from 'firebase/auth';
 import React, { useState } from 'react';
 import { auth } from '../../firebase';
 import { useNavigate } from 'react-router-dom';
@@ -8,14 +12,19 @@ function Register() {
 	const [displayName, setDisplayName] = useState('');
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+	const [user, setUser] = useState({});
 	const navigate = useNavigate();
+
+	onAuthStateChanged(auth, (currentUser) => {
+		setUser(currentUser);
+	});
 
 	const handleSignUp = async (e) => {
 		e.preventDefault();
 		try {
-			await createUserWithEmailAndPassword(auth, email, password).catch((err) =>
-				console.log(err)
-			);
+			await createUserWithEmailAndPassword(auth, email, password)
+			.catch((err) => console.log(err));
+
 			await updateProfile(auth.currentUser, { displayName: displayName }).catch(
 				(err) => console.log(err)
 			);

@@ -1,6 +1,6 @@
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import React, { useState } from 'react';
+import { signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../../firebase';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Hero from '../../assets/login-hero.png';
 
@@ -8,18 +8,26 @@ function Login() {
 	const [displayName, setDisplayName] = useState('');
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+	const [user, setUser] = useState({});
 	const navigate = useNavigate();
+
+	onAuthStateChanged(auth, (currentUser) => {
+		setUser(currentUser);
+	});
+
+	const login = async () => {
+		try {
+			const user = await signInWithEmailAndPassword(auth, email, password);
+			console.log(user);
+			navigate('/home');
+		} catch (error) {
+			console.log(error.message);
+		}
+	};
 
 	const handleSignIn = (e) => {
 		e.preventDefault();
-		signInWithEmailAndPassword(auth, displayName, email, password).then(
-			(useCredential) => {
-				console.log(useCredential);
-			}
-		);
-		navigate('/home').catch((error) => {
-			console.log(error);
-		});
+		login();
 	};
 
 	return (
