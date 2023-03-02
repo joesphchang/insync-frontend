@@ -28,7 +28,7 @@ function Register() {
 			await updateProfile(auth.currentUser, { displayName: displayName }).catch(
 				(err) => console.log(err)
 			);
-			navigate('/login');
+			navigate('/');
 		} catch (err) {
 			console.log(err);
 		}

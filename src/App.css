@@ -225,3 +225,43 @@ a:hover {
         cursor: pointer;
     }
 }
+
+/* Home */
+.home_container {
+    width: 100%;
+}
+
+.home_name-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #377077;
+    border: 2px solid red;
+    text-transform: capitalize;
+}
+
+.home_meditation-container {
+
+}
+
+.home_meditation-title {
+
+}
+
+.home_meditation-image {
+    width: 50%;
+}
+
+/* Home Intro */
+
+.intro_container {
+    width: 100%;
+}
+
+.homeintro_container {
+    border: 2px solid red;
+}
+
+.homeintro_photo {
+    width: 50%;
+}

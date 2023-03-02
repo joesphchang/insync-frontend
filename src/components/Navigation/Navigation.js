@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes, FaStream } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
 // Authentication
@@ -57,7 +57,7 @@ const Navigation = () => {
 				</button>
 			</ul>
 			<div className='hamburger' onClick={handleClick}>
-				{click ? <FaTimes size={40} /> : <FaBars size={40} />}
+				{click ? <FaTimes size={40} /> : <FaStream size={40} />}
 			</div>
 		</div>
 	);
