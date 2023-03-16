@@ -18,24 +18,26 @@ function HomeIntro() {
 	return (
 		<div className='intro_container'>
 			{intro.map((homeintro) => (
-				<div className='home_meditation-container'>
-					<div className='home_meditation-sub-container'>
-						<div className='home_meditation-sub-1'>
-							<h3 classsName='home_meditation-title'>{homeintro.title}</h3>
-							<h4>{homeintro.timer} mins</h4>
+				<Link to={`/meditation-feed/${homeintro.id}`} >
+					<div className='home_meditation-container'>
+						<div className='home_meditation-sub-container'>
+							<div className='home_meditation-sub-1'>
+								<h3 classsName='home_meditation-title'>{homeintro.title}</h3>
+								<h4>{homeintro.timer} mins</h4>
+							</div>
+							<div className='home_meditation-sub-2'>
+								<h4 className='home_meditation-play-button'>
+									<AiOutlinePlayCircle />
+								</h4>
+							</div>
 						</div>
-						<div className='home_meditation-sub-2'>
-							<h4 className='home_meditation-play-button'>
-								<AiOutlinePlayCircle />
-							</h4>
-						</div>
+						<img
+							className='homeintro_photo'
+							src={homeintro.photo_url}
+							alt='home intro'
+						/>
 					</div>
-					<img
-						className='homeintro_photo'
-						src={homeintro.photo_url}
-						alt='home intro'
-					/>
-				</div>
+				</Link>
 			))}
 		</div>
 	);
