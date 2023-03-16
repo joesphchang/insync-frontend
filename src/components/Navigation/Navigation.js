@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBars, FaTimes, FaStream } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-
+import Logo from '../../assets/logo-no-background.png';
 // Authentication
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { auth } from '../../firebase';

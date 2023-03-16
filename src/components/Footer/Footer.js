@@ -1,9 +1,24 @@
-import React from 'react'
+import React from 'react';
+import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
+import Logo from '../../assets/logo-no-background.png';
 
 function Footer() {
-  return (
-    <div>Footer</div>
-  )
+	return (
+		<div className='footer'>
+				<img src={Logo} alt='' />
+				<h3>Made with ♥ and React.JS</h3>
+			<div>
+				<a
+					className='footer_links'
+					href='https://www.linkedin.com/in/joesphchang/'>
+					<AiFillLinkedin />
+				</a>
+				<a className='footer_links' href='https://www.github.com/joesphchang'>
+					<AiFillGithub />
+				</a>
+			</div>
+		</div>
+	);
 }
 
-export default Footer
+export default Footer;
