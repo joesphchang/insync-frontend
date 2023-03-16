@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Logo from '../../assets/logo-no-background.png';
 
 // components
 import Login from '../Login/Login';
@@ -43,17 +44,17 @@ function LandingPage() {
 
 	return (
 		<div className='landing_page-container'>
-			<h1 className='landing_page-header'>insync.</h1>
-				<Slider {...settings}>
-					{carouselData.map((item) => {
-						return (
-							<div key={item.id}>
-								<p className='carousel-text'>{item.title}</p>
-								<img src={item.img} alt={item.alt} className='carousel-img' />
-							</div>
-						);
-					})}
-				</Slider>
+			<img className='landing_page-header' src={Logo} alt='' />
+			<Slider {...settings}>
+				{carouselData.map((item) => {
+					return (
+						<div key={item.id}>
+							<p className='carousel-text'>{item.title}</p>
+							<img src={item.img} alt={item.alt} className='carousel-img' />
+						</div>
+					);
+				})}
+			</Slider>
 			<Link to='/login' className='landing_page-link'>
 				Get Started
 			</Link>

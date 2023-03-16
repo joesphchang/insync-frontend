@@ -1,6 +1,8 @@
 import React from 'react'
 
 function MeditationFeed() {
+
+  
   return (
     <div>MeditationFeed</div>
   )

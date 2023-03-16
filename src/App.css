@@ -11,6 +11,7 @@
     margin-top: 100px;
     margin-left: 25px;
     margin-bottom: 25px;
+    width: 100px;
 }
 
 .slick-list {
@@ -232,7 +233,11 @@ a:hover {
 .home_name-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    margin-left: 20px;
+    /* border-bottom: .5px solid #1A1A1A; */
+}
+
+.home_name-container > h2 {
     text-transform: capitalize;
 }
 
@@ -303,7 +308,7 @@ a:hover {
     margin: 20px;
 }
 
-.footer > img {
+.sub-footer > img {
     width: 100px;
 }
 

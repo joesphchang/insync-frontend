@@ -5,8 +5,10 @@ import Logo from '../../assets/logo-no-background.png';
 function Footer() {
 	return (
 		<div className='footer'>
+			<div className='sub-footer'> 
 				<img src={Logo} alt='' />
 				<h3>Made with ♥ and React.JS</h3>
+			</div>
 			<div>
 				<a
 					className='footer_links'
